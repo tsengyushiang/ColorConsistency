@@ -6,9 +6,8 @@
 #include "cv.h"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
-
+#include <set>
 using namespace std;
-using namespace cv;
 
 namespace Utils
 {
@@ -44,23 +43,23 @@ namespace Utils
 	{
 		int imgNo;
 		vector<int> ROIIndexList; 
-		vector<Point2d> ctrlPoints[3];     //! control-points of the mapping curve (3 channels)
+		vector<cv::Point2d> ctrlPoints[3];     //! control-points of the mapping curve (3 channels)
 		vector<Adjacency> neigbList;       //! matched keys of histogram with adjacent images
 		vector<IntensityPair> gradMajors;  //! major gradient composition in luminance channel
-		Vec2b gradminmaxVals;              //! intensity range of major gradient components (v0,v1)
+		cv::Vec2b gradminmaxVals;              //! intensity range of major gradient components (v0,v1)
 		IntensityPair valuRange;           //! intensity range [low, up] of this image in luminance channel
 	};
 
 	// ********** tool function list ********** //
 	vector<string> get_filelist(string foldname);
 	//! detect roi regions
-	void findBinaryROIMask(Mat &image, vector<int> &roiIndexs);
+	void findBinaryROIMask(cv::Mat &image, vector<int> &roiIndexs);
 	//! extract pixels in overlaps
-	vector<double>* extractROIPixels(const Mat &yccImage, const vector<int> &roiIndexs);
+	vector<double>* extractROIPixels(const cv::Mat &yccImage, const vector<int> &roiIndexs);
 
 	//! for assessment
-	double calStructuralDiffs(const Mat &srcImage, const Mat &dstImage, const vector<int> &roiIndexs);
-	void getGradientOrientationMaps(Mat grayImage1, vector<double> &gradOrienVec1, Mat grayImage2, vector<double> &gradOrienVec2, const vector<int> &roiIndexs);
+	double calStructuralDiffs(const cv::Mat &srcImage, const cv::Mat &dstImage, const vector<int> &roiIndexs);
+	void getGradientOrientationMaps(cv::Mat grayImage1, vector<double> &gradOrienVec1, cv::Mat grayImage2, vector<double> &gradOrienVec2, const vector<int> &roiIndexs);
 
 	//! warning: there is a maximum overlap pixel amount :25000000 [this can be reset freely]
 	//! intersection of two mask pixel index set

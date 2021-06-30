@@ -11,7 +11,7 @@
 #include "Utils/util.h"
 
 using namespace std;
-using namespace cv;
+
 
 #define PARAM_NUM 6
 #define SAMPLE_FREQ_NUM 15          //! used only for the final step : pixel-mapping (the more, the more smooth curve)
@@ -37,7 +37,7 @@ public:
 	//! extract key correspondences of histograms
 	void buildCorrespondings();
 	//! set control points of mapping curve
-	void setCtrlPoints(const Mat &image, int imgIndex);
+	void setCtrlPoints(const cv::Mat &image, int imgIndex);
 	//! computing interpolation coefficients for sample values
 	void figureInterpolation();
 	//! Notice: image index modification during call 'setFixedImages'
@@ -45,17 +45,17 @@ public:
 	//! after : resort to keep reference images in the first few positions [_imageInforList, _filePathList, _savePathList]
 	void setFixedImages(vector<int> fixedImgNos);
 	//! global optimization : f(x) = (x'Hx + c'x)/2   s.t. Ax>=b  Bx=d
-	void quadraticProgramming(int channelNo, Vec2d curvatureRange);
+	void quadraticProgramming(int channelNo, cv::Vec2d curvatureRange);
 
 	//! update each image by mapping curves
 	void applyColorRemappingforImages(bool needIndividuals, bool applyRemapping);
-	void updateImagebyRemapping(Mat &YccImage, int imgIndex);
-	vector<Point2d> interpSamplesbyBSpline(vector<Point2d> ctrlPoints, int freqNum, int channelNo);
-	inline double interpValuebyLinear(double xi, const vector<Point2d> &samples);
+	void updateImagebyRemapping(cv::Mat &YccImage, int imgIndex);
+	vector<cv::Point2d> interpSamplesbyBSpline(vector<cv::Point2d> ctrlPoints, int freqNum, int channelNo);
+	inline double interpValuebyLinear(double xi, const vector<cv::Point2d> &samples);
 
 	//! tool functions
-	void getHistogramPercentileValues(const Mat &YCbCrImage, int imgIndex);
-	void getMajorGradientComponents(const Mat &YCbCrImage, int imgIndex);
+	void getHistogramPercentileValues(const cv::Mat &YCbCrImage, int imgIndex);
+	void getMajorGradientComponents(const cv::Mat &YCbCrImage, int imgIndex);
 	double calInterpCoeff(double xi, double x1, double x2, double x3);
 	int findImageIndex(int imgNo);
 	double measureError(int channelNo);
@@ -64,7 +64,7 @@ public:
 	
 private:
 	int _imgNum;
-	Size _imgSize;                     //! the warped image size (all the images)
+	cv::Size _imgSize;                     //! the warped image size (all the images)
 	clock_t _stime, _etime;
 	vector<int> _fixedImgList;         //! record no. of reference images
 	vector<string> _filePathList;      //! modified as resorted order

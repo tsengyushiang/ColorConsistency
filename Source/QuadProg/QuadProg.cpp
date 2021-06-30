@@ -20,6 +20,7 @@ File $Id: QuadProg++.cc 232 2007-06-21 12:29:00Z digasper $
 #include "QuadProg.h"
 //#define TRACE_SOLVER
 using namespace QP;
+using namespace cv;
 
 void QP::solveQuadraProgram( Mat_<double> H,  Mat_<double> h,  Mat_<double> A,  Mat_<double> a,  Mat_<double> B,  Mat_<double> b,  Mat_<double> &params)
 {

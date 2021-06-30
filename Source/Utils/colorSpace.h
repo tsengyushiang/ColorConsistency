@@ -10,7 +10,6 @@
 #define Inf_Num 0.00001
 
 using namespace std;
-using namespace cv;
 
 //! Notification : image as a 3 channels matrix in OpenCV has the R,G,B index as 2, 1, 0
 //! besides, we stock converted L,a,b channel in index of matrix as 0, 1, 2
@@ -20,15 +19,15 @@ using namespace cv;
 namespace ColorSpace
 {
 	//! ===== (uchar) RGB <---> (double) RGB
-	Mat uRGB2dRGB(Mat srcImage);
-	Mat dRGB2uRGB(Mat srcImage);
+	cv::Mat uRGB2dRGB(cv::Mat srcImage);
+	cv::Mat dRGB2uRGB(cv::Mat srcImage);
 
 	//! ===== RGB <---> YCbCr
-	Mat RGB2YCbCr(Mat srcImage);   //data type: uchar/double->double
-	Mat YCbCr2RGB(Mat srcImage);   //data type: double->uchar
-	Mat RGB2YCbCr(const Mat &srcImage, const vector<int> &roiIndexs);
-	Mat YCbCr2RGB(const Mat &srcImage, const vector<int> &roiIndexs);
-	Vec3i YCbCr2BGR(double Y, double Cb, double Cr);
-	Vec3d RGB2YCbCr(uchar R, uchar G, uchar B);
+	cv::Mat RGB2YCbCr(cv::Mat srcImage);   //data type: uchar/double->double
+	cv::Mat YCbCr2RGB(cv::Mat srcImage);   //data type: double->uchar
+	cv::Mat RGB2YCbCr(const cv::Mat &srcImage, const vector<int> &roiIndexs);
+	cv::Mat YCbCr2RGB(const cv::Mat &srcImage, const vector<int> &roiIndexs);
+	cv::Vec3i YCbCr2BGR(double Y, double Cb, double Cr);
+	cv::Vec3d RGB2YCbCr(uchar R, uchar G, uchar B);
 };
 

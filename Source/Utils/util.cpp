@@ -1,6 +1,7 @@
 #include "util.h"
 
 using namespace Utils;
+using namespace cv;
 
 vector<string> Utils::get_filelist(string foldname)
 {

@@ -1,5 +1,5 @@
 #include "correspondence.h"
-
+using namespace cv;
 
 void EntryMatch::analyzeCDFQuatileValues(vector<double> data, double quatile, Vec2d &qValues)
 {

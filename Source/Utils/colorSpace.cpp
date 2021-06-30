@@ -1,5 +1,5 @@
 #include "ColorSpace.h"
-
+using namespace cv;
 
 Mat ColorSpace::uRGB2dRGB(Mat srcImage)
 {

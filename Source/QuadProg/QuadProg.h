@@ -67,14 +67,12 @@ s.t.
 #include "Array.h"
 
 using namespace std;
-using namespace cv;
-
 
 namespace QP
 {
-	void solveQuadraProgram( Mat_<double> H,  Mat_<double> h,  Mat_<double> A,  Mat_<double> a, 
-		 Mat_<double> B,  Mat_<double> b,  Mat_<double> &params);
-	void solveQuadraProgram( Mat_<double> H,  Mat_<double> h,  Mat_<double> B,  Mat_<double> b,  Mat_<double> &params);
+	void solveQuadraProgram( cv::Mat_<double> H,  cv::Mat_<double> h,  cv::Mat_<double> A,  cv::Mat_<double> a, 
+		 cv::Mat_<double> B,  cv::Mat_<double> b,  cv::Mat_<double> &params);
+	void solveQuadraProgram( cv::Mat_<double> H,  cv::Mat_<double> h,  cv::Mat_<double> B,  cv::Mat_<double> b,  cv::Mat_<double> &params);
 
 
 	double solve_quadprog(QPArray::Matrix<double>& G, QPArray::Vector<double>& g0, 

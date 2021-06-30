@@ -3,7 +3,7 @@
 using namespace std;
 using namespace Utils;
 using namespace ColorSpace;
-
+using namespace cv;
 #define LAMBDA 3    //! [1.0*M/m] balancing coefficient of quality energy term
 
 void ToneUnifier::unifyMultiTones()
