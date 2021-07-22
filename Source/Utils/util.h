@@ -12,7 +12,7 @@ using namespace std;
 namespace Utils
 {
 	// ********** global variable list ********** //
-	static string baseDir = "C:/Users/Richard/Desktop/Release/Data/";
+	static string baseDir = "C:/Users/tseng/Desktop/projects/ColorConsistency/Data/";
 
 	// ********** data struct list ********** //
 	struct InterpInfo         //! record the NO. of involved ctrl-point for interpolation

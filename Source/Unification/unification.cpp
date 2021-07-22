@@ -40,7 +40,7 @@ void ToneUnifier::unifyMultiTones()
 	bool needEachWarp = true, applyRemapping = true;
 	applyColorRemappingforImages(needEachWarp, applyRemapping);
 	//! output evaluation report
-	outputEvaluationReport();
+	//outputEvaluationReport();
 }
 
 
