@@ -1,3 +1,77 @@
+# Quick Start
+
+- cmake-gui 3.18.3
+    - `your project folder/ColorConsistency/Source`
+    - `your project folder/ColorConsistency/Source/build`
+    - configure with vs2019
+    - download libraies 
+        - [opencv3.4](https://drive.google.com/file/d/1UucTEp2o5m3zd7H_vI1Qbz00tHbl7XTp/view?usp=sharing)
+        - [VTK-8.2](https://drive.google.com/file/d/1IE-Nehx3HWsSet8xFCttnoRAiGZgRe5q/view?usp=sharing)
+    - choose `opencv-3.4/build`
+    - generate and OpenProject
+
+-  Open `your project folder/ColorConsistency/Source/build/CoColourPro.sln`
+- switch to `Realse/x64` and set `Uniform` as start project
+
+- set libirarise
+
+    - add `C:\git\VTK-8.2.0\build\lib\Release` to lib folder
+
+    - replace `C:\ProgramData\Anaconda3\Library\lib\hdf5.lib...` to
+        ```
+        C:\Users\tseng\anaconda3\Library\lib\hdf5.lib
+        vtkRenderingOpenGL2-8.2.lib
+        vtkCommonCore-8.2.lib
+        vtksys-8.2.lib
+        vtkCommonDataModel-8.2.lib
+        vtkCommonMath-8.2.lib
+        vtkCommonMisc-8.2.lib
+        vtkCommonSystem-8.2.lib
+        vtkCommonTransforms-8.2.lib
+        vtkCommonExecutionModel-8.2.lib
+        vtkRenderingCore-8.2.lib
+        vtkCommonColor-8.2.lib
+        vtkCommonComputationalGeometry-8.2.lib
+        vtkFiltersCore-8.2.lib
+        vtkFiltersGeneral-8.2.lib
+        vtkFiltersGeometry-8.2.lib
+        vtkFiltersSources-8.2.lib
+        vtkglew-8.2.lib
+        vtkInteractionStyle-8.2.lib
+        vtkFiltersExtraction-8.2.lib
+        vtkFiltersStatistics-8.2.lib
+        vtkImagingFourier-8.2.lib
+        vtkImagingCore-8.2.lib
+        vtkRenderingLOD-8.2.lib
+        vtkFiltersModeling-8.2.lib
+        vtkIOPLY-8.2.lib
+        vtkIOCore-8.2.lib
+        vtkdoubleconversion-8.2.lib
+        vtklz4-8.2.lib
+        vtklzma-8.2.lib
+        vtkzlib-8.2.lib
+        vtkFiltersTexture-8.2.lib
+        vtkRenderingFreeType-8.2.lib
+        vtkfreetype-8.2.lib
+        vtkIOExport-8.2.lib
+        vtkIOImage-8.2.lib
+        vtkDICOMParser-8.2.lib
+        vtkmetaio-8.2.lib
+        vtkjpeg-8.2.lib
+        vtkpng-8.2.lib
+        vtktiff-8.2.lib
+        vtkIOXML-8.2.lib
+        vtkIOXMLParser-8.2.lib
+        vtkexpat-8.2.lib
+        vtkRenderingContext2D-8.2.lib
+        vtkRenderingGL2PSOpenGL2-8.2.lib
+        vtkgl2ps-8.2.lib
+        vtkIOGeometry-8.2.lib
+        vtkIOLegacy-8.2.lib
+        ```
+
+- this project is fork version of https://github.com/MenghanXia/ColorConsistency
+
 ## Introduction
 
 This project is developed for optimizing the color consistency across images and guarantee the imaging
